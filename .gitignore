@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/SortArrayInC#/v17
+/.vs
+/SortArrayEg/.vs
+/SortArrayEg/bin/Debug/net6.0
+/SortArrayEg/obj
