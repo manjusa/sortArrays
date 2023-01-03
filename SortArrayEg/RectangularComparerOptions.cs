@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-//https://stackoverflow.com/questions/51804181/c-sharp-sorting-a-rectangular-array-by-selected-columns
 
 namespace SortArrayEg
 {

@@ -20,16 +20,24 @@ namespace SortArrayEg
             return a;
         }
         
-        public static int[][] SortJaggedArray(int[][] a)
+        public static int[][] SortJaggedArray(int[][] a,string columnNumber)
         {
             CustomSortComparerOptions cs = new CustomSortComparerOptions();
-            Array.Sort(a, CustomSortComparerOptions.SortByFirstNotEqualColumn());
+            if(columnNumber.ToUpper().Equals("FIRST"))
+                Array.Sort(a, CustomSortComparerOptions.SortByFirstColumn());
+            if (columnNumber.ToUpper().Equals("SECOND"))
+                Array.Sort(a, CustomSortComparerOptions.SortBySecondColumn());
+            if (columnNumber.ToUpper().Equals("FIRST-NON-MATCHING"))
+                Array.Sort(a, CustomSortComparerOptions.SortByFirstNotEqualColumn());
             return a;
         }
-        public static int[,] SortMultiDimensionalArray(int[,] a,int[] trackerArray)
+        public static int[,] SortMultiDimensionalArray(int[,] a,int[] trackerArray, string columnNumber)
         {            
             RectangularComparerOptions rs = new RectangularComparerOptions(a);
-            Array.Sort(trackerArray, rs.SortBySecondColumn(a));
+            if (columnNumber.ToUpper().Equals("FIRST"))
+                Array.Sort(trackerArray, rs.SortByFirstColumn(a));
+            if (columnNumber.ToUpper().Equals("SECOND"))
+                Array.Sort(trackerArray, rs.SortBySecondColumn(a));
             return a;
         }
         public static int [][] ConvertMultiDimensionalArrayToJaggedArray(int[,] a)

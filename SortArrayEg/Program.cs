@@ -1,7 +1,7 @@
 ﻿using SortArrayEg;
 using System.Linq;
 //Sort 1D int array
-int[] singleDimensionalArr = new int[] { 2, 1, 55, 11, 4, 7, 8 };
+/*int[] singleDimensionalArr = new int[] { 2, 1, 55, 11, 4, 7, 8 };
 SortArray.Sort1DIntArray(singleDimensionalArr);
 PrintOutputFor1DArray(singleDimensionalArr);
 
@@ -9,7 +9,10 @@ PrintOutputFor1DArray(singleDimensionalArr);
 string[] singleDimensionalStringArr = new string[] { "Carrot", "Apple", "Grapes", "Banana", "Avocado", "Grapefruit", "Beetroot" };
 SortArray.Sort1DStringArray(singleDimensionalStringArr);
 PrintOutputFor1DArray(singleDimensionalStringArr);
-//2dArray- Jagged Array
+
+//2dArray- Jagged Array - can reference any item as an array by itself
+//here replacing 0th element of a array and replacing it with another int
+//array
 int[][] a = new int[][] {
                         new int[]{27,25,99},
                         new int[]{33,12,22},
@@ -19,22 +22,73 @@ int[][] a = new int[][] {
 
 int[] aa = new int[3] { 10, 12, 13 };
 a[0] = aa;
-Console.WriteLine(a);
-//SortArray.SortJaggedArray(a);
-//PrintOutputFor2DArray(a);
-//rectangular array
-int[,] a1 = new int[,] { { 12, 01 }, { 10, 13 }, { 19, 27 }, { 13, 11 } };
-int[] idTrackingArray = new int[] { 0, 1, 2, 3 };
-a1 = SortArray.SortMultiDimensionalArray(a1, idTrackingArray);
-PrintOutputFor2DRectangularArray(idTrackingArray, a1);
+Console.Write("item in array replaced:");
+PrintOutputFor2DArray(a);//prints  { 10, 12, 13 },{33,12,22},{13,11,19},{33,12,21}
 
-//rectangular array to jagged array
+a = new int[][] {
+                        new int[]{27,25,99},
+                        new int[]{33,12,22},
+                        new int[]{13,11,19},
+                        new int[]{33,12,21}
+                         };
+//Sort Jagged array by first/second/or first non matching column
+Console.WriteLine("before sorting by FIRST");
+PrintOutputFor2DArray(a);
+SortArray.SortJaggedArray(a, "FIRST");
+Console.WriteLine("output for sort by FIRST column");
+PrintOutputFor2DArray(a);
+Console.WriteLine("-----RESET-----");
+Console.WriteLine("before sorting by SECOND");
+a = new int[][] {
+                        new int[]{27,25,99},
+                        new int[]{33,12,22},
+                        new int[]{13,11,19},
+                        new int[]{33,12,21}
+                         };
+PrintOutputFor2DArray(a);
+SortArray.SortJaggedArray(a, "SECOND");
+Console.WriteLine("output for sort by SECOND column");
+PrintOutputFor2DArray(a);
+Console.WriteLine("----RESET------");
+Console.WriteLine("before sorting by FIRST NON MATCHING COLUMN");
+a = new int[][] {
+                        new int[]{27,25,99},
+                        new int[]{33,12,22},
+                        new int[]{13,11,19},
+                        new int[]{33,12,21}
+                         };
+PrintOutputFor2DArray(a);
+SortArray.SortJaggedArray(a, "FIRST-NON-MATCHING");
+Console.WriteLine("output for sort by FIRST-NON-MATCHING column");
+PrintOutputFor2DArray(a);*/
+
+//Rectangular array
+/*int[,] a1 = new int[,] { { 12, 01 }, { 10, 13 }, { 19, 27 }, { 13, 11 } };
+int[] idTrackingArray = new int[] { 0, 1, 2, 3 };
+a1 = SortArray.SortMultiDimensionalArray(a1, idTrackingArray,"FIRST");
+PrintOutputFor2DRectangularArray(idTrackingArray, a1);
+Console.WriteLine("output for sort by FIRST column");
+PrintOutputFor2DRectangularArray(idTrackingArray, a1);
+Console.WriteLine("-----RESET-----");
+
+a1 = new int[,] { { 12, 01 }, { 10, 13 }, { 19, 27 }, { 13, 11 } };//reset
+PrintOutputFor2DRectangularArray(idTrackingArray, a1);
+a1 = SortArray.SortMultiDimensionalArray(a1, idTrackingArray, "SECOND");
+Console.WriteLine("output for sort by SECOND column");
+PrintOutputFor2DRectangularArray(idTrackingArray, a1);
+Console.WriteLine("-----RESET----");*/
+
+
+//CONVERT rectangular array to jagged array
 /*
-int[,] a2 = new int[,] { { 10, 13,22 }, { 12, 01,11 }, { 13, 11,56 }, { 19, 27,61 } , { 11, 22, 33 } , { 99, 27, 51 } };
-int [][]convertedToJaggedArray=SortArray.ConvertMultiDimensionalArrayToJaggedArray(a2);
+int[,] a2 = new int[,] { { 10, 13, 22 }, { 12, 01, 11 }, { 13, 11, 56 }, { 19, 27, 61 }, { 11, 22, 33 }, { 99, 27, 51 } };
+Console.WriteLine("original rectangular array");
+int[] idTrackingArray1 = new int[] { 0, 1, 2, 3 ,4, 5};
+PrintOutputFor2DRectangularArray(idTrackingArray1, a2);
+int[][] convertedToJaggedArray = SortArray.ConvertMultiDimensionalArrayToJaggedArray(a2);
+Console.WriteLine("output of convert from rectangular array to jagged array");
 PrintOutputFor2DArray(convertedToJaggedArray);*/
-//PrintOutputFor1DArray<int>(singleDimensionalArr);
-//PrintOutputFor1DArray<string>(singleDimensionalStringArr);
+
 
 static void PrintOutputFor2DRectangularArray(int[] tagArray, int[,] a1)
 {
